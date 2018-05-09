@@ -47,10 +47,10 @@ for url in urllist:
 
 	for item in resp['result']:
 		data = (item['name'], item['physical_capacity'], item['allocated_physical_space'], item['free_physical_space'], item['free_virtual_space'], datestr, ArrayName)
-		print(data)
+		#print(data)
 		cursor = connection.cursor()
 		sql = 'INSERT INTO STORAGE.storageibox (`Poolname`, `Totalcapacity`, `Totalusedcapacity`, `Totalfreecapacity`, `Totalvirtualcapacity`, `Date`, `ArrayName`) VALUES (%s, %s, %s, %s, %s, %s, %s)'
-		print(sql)
+		#print(sql)
 		cursor.execute(sql, data)
 		connection.commit()
 
